@@ -7,8 +7,8 @@
 
 <table align="left">
     <tr>
-        <td width="5%">
-            <img src="https://tse3.mm.bing.net/th?id=OIP.Me24yHjzo8uEtQrHYKnq3gHaHa&pid=Api&P=0&h=180">
+        <td width="10%">
+            <img src="https://www.pngall.com/wp-content/uploads/2016/06/Health-Free-Download-PNG.png">
         </td>
         <td>
             <div align="left", style="font-size:120%">
