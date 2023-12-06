@@ -2,4 +2,4 @@
 Predicting probability of heart disease in patients.
 
 ***
-![Heart](https://www.heart.scientexconference.com/cfiles/sessions/10.jpg)
+![Heart](https://www.econsight.com/wp-content/uploads/2022/12/Medical-Imaging.jpg)
