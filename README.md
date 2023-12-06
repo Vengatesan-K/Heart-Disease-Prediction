@@ -1,6 +1,6 @@
-# Heart Disease Prediction
+# Heart Disease Prediction 
 
-> ${\textsf{\color{red}Predicting probability of heart disease in patients.}}$
+> ${\textsf{\color{Darkblue}Predicting probability of heart disease in patients.}}$
 ***
 
 ![Heart](https://www.econsight.com/wp-content/uploads/2022/12/Medical-Imaging.jpg)
