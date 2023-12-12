@@ -109,3 +109,59 @@ C -->|ML Algorithms| E[Predictions]
 <hr>
 
 ![Screenshot 2023-12-12 101010](https://github.com/Vengatesan-K/Portfolio/assets/128688827/317f5363-13aa-4890-8d3b-86811df5918e)
+
+*** 
+<table align="center">
+    <tr>
+        <td width="20%">
+            <img src="https://cdn3.iconfinder.com/data/icons/arrows-25/137/Seperate-256.png">
+        </td>
+        <td>
+            <div align="center" style="font-size:200%">
+                <font color="#21618C">
+                    <b>Train Test Split</b> 
+                </font>
+            </div>
+        </td>
+    </tr>
+</table>
+
+<hr>
+
+```mermaid
+pie
+"Train" : 80
+"Test" : 20
+```
+***
+
+<table align="center">
+    <tr>
+        <td width="8%">
+            <img src="https://cdn4.iconfinder.com/data/icons/big-data-analytics-volume-1/64/decision-tree-512.png">
+        </td>
+        <td>
+            <div align="center" style="font-size:200%">
+                <font color="#21618C">
+                    <b>Classification Using Machine Learning Algorithms</b> 
+                </font>
+            </div>
+        </td>
+    </tr>
+</table>
+
+<hr>
+
+```mermaid
+gantt
+    title Heart Disease Classifications Model Accuracies
+    dateFormat  X
+    axisFormat %s
+
+    section KNN
+    0.81   : 0, 81
+    section Rand'Forest
+    0.83   : 0, 83
+    section DecisionTree
+    0.78   : 0, 78
+```
