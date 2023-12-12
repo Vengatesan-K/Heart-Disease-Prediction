@@ -62,3 +62,13 @@ ___
 |10     |	Oldpeak	|ST depression induced by exercise relative to rest, providing insights into the heart's activity during exercise.   |
 |11   | ST_Slope |Refers to the slope of the peak exercise ST segment, which describes the heart rate change during exercise and recovery.  |
 |12     |	HeartDisease    |Typically denotes the presence or absence of heart disease, often encoded as a binary value (0 for absence, 1 for presence) in the heart disease prediction dataset.    |
+
+
+```mermaid
+flowchart LR
+
+A[Data Collection] -->|Kaggle| B(Cleaning)
+B --> C{Preprocessing}
+C -->|Visualization| D[EDA]
+C -->|ML Algorithms| E[Predictions]
+```
