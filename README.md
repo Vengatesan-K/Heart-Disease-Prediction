@@ -63,6 +63,24 @@ ___
 |11   | ST_Slope |Refers to the slope of the peak exercise ST segment, which describes the heart rate change during exercise and recovery.  |
 |12     |	HeartDisease    |Typically denotes the presence or absence of heart disease, often encoded as a binary value (0 for absence, 1 for presence) in the heart disease prediction dataset.    |
 
+***
+<table align="center">
+    <tr>
+        <td width="7%">
+            <img src="https://www.pngfind.com/pngs/m/302-3024990_control-tower-concept-approach-icon-hd-png-download.png">
+        </td>
+        <td>
+            <div align="center" style="font-size:200%">
+                <font color="#21618C">
+                    <b>Approach</b> 
+                </font>
+            </div>
+        </td>
+    </tr>
+</table>
+
+<hr>
+
 
 ```mermaid
 flowchart LR
@@ -72,3 +90,22 @@ B --> C{Preprocessing}
 C -->|Visualization| D[EDA]
 C -->|ML Algorithms| E[Predictions]
 ```
+***
+<table align="center">
+    <tr>
+        <td width="7%">
+            <img src="https://flyclipart.com/thumb2/rubiks-cube-scrambled-256851.png">
+        </td>
+        <td>
+            <div align="center" style="font-size:200%">
+                <font color="#21618C">
+                    <b>Correlation between Features</b> 
+                </font>
+            </div>
+        </td>
+    </tr>
+</table>
+
+<hr>
+
+![Screenshot 2023-12-12 101010](https://github.com/Vengatesan-K/Portfolio/assets/128688827/317f5363-13aa-4890-8d3b-86811df5918e)
