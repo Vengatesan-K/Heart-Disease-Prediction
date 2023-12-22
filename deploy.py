@@ -3,6 +3,7 @@ import numpy as np
 from sklearn.preprocessing import StandardScaler
 import joblib as joblib
 import os
+import pandas as pd
 
 model = joblib.load('randomforest_model.pkl')
 scaler = joblib.load('standardScaler.pkl')
@@ -13,36 +14,79 @@ IMG_FOLDER = os.path.join('static', 'IMG')
 app.config['UPLOAD_FOLDER'] = IMG_FOLDER
 
 
+from sklearn.preprocessing import LabelEncoder
+
+# Sample label encoding function
+def encode_categorical_features(data):
+    le = LabelEncoder()
+    categorical_columns = ['Sex', 'ChestPainType', 'RestingECG', 'ExerciseAngina', 'ST_Slope']
+    
+    # Encode categorical columns with label encoding
+    for col in categorical_columns:
+        data[col] = le.fit_transform(data[col])
+    
+    return data
+
 @app.route('/')
 def index():
-    return render_template('index.html')
+    return render_template('index.html', prediction="", image="")
 
-
-@app.route('/', methods=['GET', 'POST'])
-def home():
+@app.route('/home', methods=['POST'])
+def predict():
     if request.method == 'POST':
-        age = request.form['Age']
-        sex = request.form['Sex']
-        cpt = request.form['ChestPainType']
-        rbp = request.form['RestingBP']
-        chl = request.form['Cholestrol']
-        fas = request.form['FastingBS']
-        recg = request.form['RestingECG']
-        mhr = request.form['MaxHR']
-        ex = request.form['ExerciseAngina']
-        old = request.form['Oldpeak']
-        st = request.form['ST_Slope']
+        Age = float(request.form['Age'])
+        Sex = request.form['Sex']
+        ChestPainType = request.form['ChestPainType']
+        RestingBp = float(request.form['RestingBp'])
+        Cholesterol = float(request.form['Cholesterol'])
+        FastingBS = float(request.form['FastingBS'])
+        RestingECG = request.form['RestingECG']
+        MaxHR = float(request.form['MaxHR'])
+        ExerciseAngina = request.form['ExerciseAngina']
+        Oldpeak = float(request.form['Oldpeak'])
+        ST_Slope = request.form['ST_Slope']
+
+        # Prepare input data for prediction
+        input_data = {
+            'Age': [Age],
+            'Sex': [Sex],
+            'ChestPainType': [ChestPainType],
+            'RestingBp': [RestingBp],
+            'Cholesterol': [Cholesterol],
+            'FastingBS': [FastingBS],
+            'RestingECG': [RestingECG],
+            'MaxHR': [MaxHR],
+            'ExerciseAngina': [ExerciseAngina],
+            'Oldpeak': [Oldpeak],
+            'ST_Slope': [ST_Slope]
+        }
+
+        # Create a DataFrame with the input data
+        input_df = pd.DataFrame(input_data)
+
+        # Encode categorical features
+        encoded_input = encode_categorical_features(input_df)
+
+        # Scale numerical features
+        numerical_features = ['Age', 'RestingBp', 'Cholesterol', 'FastingBS', 'MaxHR', 'Oldpeak']
+        scaled_input = encoded_input.copy()  
+        scaled_input[numerical_features] = scaler.transform(encoded_input[numerical_features])
+
+        # Make a prediction using the loaded model
+        prediction_array = model.predict(scaled_input)
         
-        new_data_to_scale = np.array([[age, rbp, chl, old, mhr]])
-        scaled_new_data_partial = scaler.transform(new_data_to_scale)
-        additional_data = np.array([[sex, cpt, fas, recg, ex, st]])
-        new_data_combined = np.concatenate((scaled_new_data_partial, additional_data), axis=1)
-        prediction = model.predict(new_data_combined)
-        image = prediction[0]+'.png'
-        image = os.path.join(app.config['UPLOAD_FOLDER'], image)
-        return render_template('index.html', prediction=prediction[0], image=image)
-    return render_template('index.html')
+        # Logic to display prediction
+        if prediction_array == 1:
+            prediction = "Yes"
+            image = prediction +".png"
+        else:
+            prediction = "No"
+            image = prediction +".png"
+        
+        return render_template('index.html', prediction=prediction, image=image)
 
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0', port=8080)
+    
+
