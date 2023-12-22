@@ -37,7 +37,7 @@ def predict():
         Age = float(request.form['Age'])
         Sex = request.form['Sex']
         ChestPainType = request.form['ChestPainType']
-        RestingBp = float(request.form['RestingBp'])
+        RestingBP = float(request.form['RestingBP'])
         Cholesterol = float(request.form['Cholesterol'])
         FastingBS = float(request.form['FastingBS'])
         RestingECG = request.form['RestingECG']
@@ -51,7 +51,7 @@ def predict():
             'Age': [Age],
             'Sex': [Sex],
             'ChestPainType': [ChestPainType],
-            'RestingBp': [RestingBp],
+            'RestingBP': [RestingBP],
             'Cholesterol': [Cholesterol],
             'FastingBS': [FastingBS],
             'RestingECG': [RestingECG],
@@ -68,7 +68,7 @@ def predict():
         encoded_input = encode_categorical_features(input_df)
 
         # Scale numerical features
-        numerical_features = ['Age', 'RestingBp', 'Cholesterol', 'FastingBS', 'MaxHR', 'Oldpeak']
+        numerical_features = ['Age', 'RestingBP', 'Cholesterol', 'FastingBS', 'MaxHR', 'Oldpeak']
         scaled_input = encoded_input.copy()  
         scaled_input[numerical_features] = scaler.transform(encoded_input[numerical_features])
 
