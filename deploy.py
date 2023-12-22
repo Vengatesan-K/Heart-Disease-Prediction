@@ -19,7 +19,7 @@ from sklearn.preprocessing import LabelEncoder
 # Sample label encoding function
 def encode_categorical_features(data):
     le = LabelEncoder()
-    categorical_columns = ['Sex', 'ChestPainType', 'RestingECG', 'ExerciseAngina', 'ST_Slope']
+    categorical_columns = ['Sex', 'ChestPainType', 'FastingBS', 'RestingECG', 'ExerciseAngina', 'ST_Slope']
     
     # Encode categorical columns with label encoding
     for col in categorical_columns:
@@ -39,7 +39,7 @@ def predict():
         ChestPainType = request.form['ChestPainType']
         RestingBP = float(request.form['RestingBP'])
         Cholesterol = float(request.form['Cholesterol'])
-        FastingBS = float(request.form['FastingBS'])
+        FastingBS = request.form['FastingBS']
         RestingECG = request.form['RestingECG']
         MaxHR = float(request.form['MaxHR'])
         ExerciseAngina = request.form['ExerciseAngina']
@@ -68,7 +68,7 @@ def predict():
         encoded_input = encode_categorical_features(input_df)
 
         # Scale numerical features
-        numerical_features = ['Age', 'RestingBP', 'Cholesterol', 'FastingBS', 'MaxHR', 'Oldpeak']
+        numerical_features = ['Age', 'RestingBP', 'Cholesterol', 'MaxHR', 'Oldpeak']
         scaled_input = encoded_input.copy()  
         scaled_input[numerical_features] = scaler.transform(encoded_input[numerical_features])
 
