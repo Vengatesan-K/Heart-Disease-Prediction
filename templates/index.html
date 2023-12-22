@@ -52,9 +52,13 @@
                     <label  class="input-label">Cholesterol</label>
                 </div>
 		<div class="input">
-                    <input name="FastingBS" type="number" step="any"  class="input-field" required/>
-                    <label  class="input-label">FastingBS</label>
-                </div>
+                              <select name="FastingBS" class="input-field" required>
+				<option value="" disabled selected>Select FastingBS type</option>
+				<option value="no">No</option>
+				<option value="yes">Yes</option>
+			      </select>
+			    <label class="input-label">FastingBS</label>
+      		</div>
 		<div class="input">
                               <select name="RestingECG" class="input-field" required>
 				<option value="" disabled selected>Select RestingECG type</option>
