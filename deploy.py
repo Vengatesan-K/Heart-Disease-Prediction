@@ -29,9 +29,9 @@ def encode_categorical_features(data):
 
 @app.route('/')
 def index():
-    return render_template('index.html', prediction="", image="")
+    return render_template('index.html')
 
-@app.route('/home', methods=['POST'])
+@app.route('/', methods=['GET', 'POST'])
 def predict():
     if request.method == 'POST':
         Age = float(request.form['Age'])
@@ -79,11 +79,13 @@ def predict():
         if prediction_array == 1:
             prediction = "Yes"
             image = prediction +".png"
+            image = os.path.join(app.config['UPLOAD_FOLDER'], image)
         else:
             prediction = "No"
             image = prediction +".png"
-        
-        return render_template('index.html', prediction=prediction, image=image)
+            image = os.path.join(app.config['UPLOAD_FOLDER'], image)
+            return render_template('index.html', prediction=prediction, image=image)
+    return render_template('index.html')
 
 
 if __name__ == '__main__':
