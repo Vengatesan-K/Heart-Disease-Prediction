@@ -38,11 +38,11 @@ input {
 .card-image {
 	border-radius: 8px;
 	overflow: hidden;
-	padding-bottom: 25%;
+	padding-bottom: 20%;
 	background-image: url('https://raw.githubusercontent.com/Vengatesan-K/Heart-Disease-Prediction/main/Heart.png');
 	background-repeat: no-repeat;
 	background-size: 30%;
-	background-position: 600px 12%;
+	background-position: 600px 8%;
 	position: relative;
 }
 
@@ -51,9 +51,9 @@ input {
 	left: 7%;
 	top: 10%;
 	right: 10%;
-	font-size: 2.5rem;
+	font-size: 2rem;
 	font-weight: 800;
-	color: #400a88;
+	color: #c81515;
 	line-height: 1.322;
 	small {
 		display: block;
