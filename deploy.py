@@ -75,16 +75,18 @@ def predict():
         # Make a prediction using the loaded model
         prediction_array = model.predict(scaled_input)
         
-        # Logic to display prediction
+    
         if prediction_array == 1:
             prediction = "Yes"
-            image = prediction +".png"
+            image = prediction + ".png"
             image = os.path.join(app.config['UPLOAD_FOLDER'], image)
         else:
             prediction = "No"
-            image = prediction +".png"
+            image = prediction + ".png"
             image = os.path.join(app.config['UPLOAD_FOLDER'], image)
-            return render_template('index.html', prediction=prediction, image=image)
+        
+        return render_template('index.html', prediction=prediction, image=image)
+
     return render_template('index.html')
 
 
