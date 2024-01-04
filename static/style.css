@@ -42,7 +42,7 @@ input {
 	background-image: url('https://raw.githubusercontent.com/Vengatesan-K/Heart-Disease-Prediction/main/Heart.png');
 	background-repeat: no-repeat;
 	background-size: 15%;
-	background-position: 450px 18%;
+	background-position: 800px 18%;
 	position: relative;
 }
 
@@ -64,7 +64,7 @@ input {
 }
 
 .card-form {
-	padding: 2rem 2rem 0;
+	padding: 2rem 1rem 0;
 }
 
 .input {
