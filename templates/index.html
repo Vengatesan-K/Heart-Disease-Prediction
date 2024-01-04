@@ -1,99 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
+
+    <link rel="stylesheet" href="{{ url_for('static',filename='style.css')}}">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Diagnosing Heart Disease</title>
-
-    <style>
-        .container {
-            display: flex;
-            flex-wrap: wrap;
-            max-width: 800px; /* Set the maximum width for the container */
-            margin: 0 auto; /* Center the container horizontally */
-            padding: 20px; /* Add some padding for spacing */
-        }
-
-        .input {
-            flex: 0 0 48%; /* Adjust the width of each input to occupy almost half the container */
-            margin-bottom: 15px; /* Add some space between inputs */
-        }
-
-        .input:last-child {
-            flex-basis: 100%; /* Make the last input (submit button) take up the entire width */
-        }
-
-        .input-field {
-            width: calc(100% - 10px); /* Adjust the width of input fields */
-        }
-
-        /* Media query for responsiveness */
-        @media screen and (max-width: 768px) {
-            .input {
-                flex: 0 0 100%; /* On smaller screens, make each input take up full width */
-            }
-        }
-    </style>
 </head>
 <body>
+   
     <div class="container">
-        <div class="input">
-            <div class="card">
-                <div class="card-image">    
-                    <h2 class="card-heading">
-                        Diagnosing Heart Disease
-                    </h2>
-                </div>
-                <form class="card-form" action="{{ url_for('index')}}" method="POST">
-                    <!-- First six inputs -->
-                    <div class="input">
-                        <input name="Age" type="number" step="any" class="input-field" required/>
-                        <label class="input-label">Age</label>
-                    </div>
-                    <div class="input">
-                        <select name="Sex" class="input-field" required>
-                            <option value="" disabled selected>Select sex</option>
-                            <option value="female">Female</option>
-                            <option value="male">Male</option>
-                            <option value="other">Other</option>
-                        </select>
-                        <label class="input-label">Sex</label>
-                    </div>
-                    <div class="input">
-                        <select name="ChestPainType" class="input-field" required>
-                            <option value="" disabled selected>Select chest paintype</option>
-                            <option value="asy">Asymptomatic</option>
-                            <option value="ata">Atypical-angina</option>
-                            <option value="nap">Non-anginal-pain</option>
-                            <option value="ta">Typical-angina</option>
-                        </select>
-                        <label class="input-label">Chest Pain Type</label>
-                    </div>
-                    <div class="input">
-                        <input name="RestingBP" type="number" step="any" class="input-field" required/>
-                        <label class="input-label">Resting Blood Pressure(mmHg)</label>
-                    </div>
-                    <div class="input">
-                        <input name="Cholesterol" type="number" step="any" class="input-field" required/>
-                        <label class="input-label">Cholesterol(mg/dL)</label>
-                    </div>
-                    <div class="input">
-                        <select name="FastingBS" class="input-field" required>
-                            <option value="" disabled selected>Select FastingBS type</option>
-                            <option value="no">No</option>
-                            <option value="yes">Yes</option>
-                        </select>
-                        <label class="input-label">Fasting Blood Sugar(mg/dL)</label>
-                    </div>
-                    <!-- Submit button -->
-                    <div class="input">
-                        <button type="submit" class="action-button">Submit</button>
-                    </div>
-                </form>
+        <!-- code here -->
+        <div class="card">
+            <div class="card-image">	
+                <h2 class="card-heading">
+                    Diagnosing Heart Disease
+                </h2>
             </div>
+            <form class="card-form" action="{{ url_for('index')}}" method="POST">
+                <div class="input">
+                    <input name="Age" type="number" step="any"  class="input-field" required/>
+                    <label  class="input-label">Age</label>
+                </div>
+                            <div class="input">
+                              <select name="Sex" class="input-field" required>
+				<option value="" disabled selected>Select sex</option>
+				<option value="female">Female</option>
+				<option value="male">Male</option>
+				<option value="other">Other</option>
+			      </select>
+			    <label class="input-label">Sex</label>
+      		</div>
+
+                            <div class="input">
+                              <select name="ChestPainType" class="input-field" required>
+				<option value="" disabled selected>Select chest paintype</option>
+				<option value="asy">Asymptomatic</option>
+				<option value="ata">Atypical-angina</option>
+				<option value="nap">Non-anginal-pain</option>
+				<option value="ta">Typical-angina</option>
+			      </select>
+			    <label class="input-label">Chest Pain Type</label>
+      		</div>
+                <div class="input">
+                    <input name="RestingBP" type="number" step="any"  class="input-field" required/>
+                    <label  class="input-label">Resting Blood Pressure(mmHg)</label>
+                </div>
+		<div class="input">
+                    <input name="Cholesterol" type="number" step="any"  class="input-field" required/>
+                    <label  class="input-label">Cholesterol(mg/dL)</label>
+                </div>
+		<div class="input">
+                              <select name="FastingBS" class="input-field" required>
+				<option value="" disabled selected>Select FastingBS type</option>
+				<option value="no">No</option>
+				<option value="yes">Yes</option>
+			      </select>
+			    <label class="input-label">Fasting Blood Sugar(mg/dL)</label>
+      		</div>
+		<div class="input">
+                              <select name="RestingECG" class="input-field" required>
+				<option value="" disabled selected>Select RestingECG type</option>
+				<option value="lvh">LVH</option>
+				<option value="normal">Normal</option>
+				<option value="st">ST</option>
+				
+			      </select>
+			    <label class="input-label">Resting Electrocardiographic Result</label>
+      		</div>
+		<div class="input">
+                    <input name="MaxHR" type="number" step="any"  class="input-field" required/>
+                    <label  class="input-label">Maximum Heart Rate(bpm)</label>
+                </div>
+		<div class="input">
+                              <select name="ExerciseAngina" class="input-field" required>
+				<option value="" disabled selected>Select ExerciseAngina type</option>
+				<option value="no">No</option>
+				<option value="yes">Yes</option>
+			      </select>
+			    <label class="input-label">Exercise Angina</label>
+      		</div>
+		<div class="input">
+                    <input name="Oldpeak" type="number" step="any"  class="input-field" required/>
+                    <label  class="input-label">Old Peak</label>
+                </div>
+		<div class="input">
+                              <select name="ST_Slope" class="input-field" required>
+				<option value="" disabled selected>Select ST_Slope type</option>
+				<option value="down">Down</option>
+				<option value="flat">Flat</option>
+				<option value="up">Up</option>
+			      </select>
+			    <label class="input-label">ST Slope</label>
+      		</div>
+                <div class="action">
+                    <button type="submit" class="action-button">Submit</button>
+                </div>
+            </form>
+
+            <center><p style="color: darkred; font-weight: bold;">{{ prediction }}</p>
+		<img src="{{ image }}" alt="{{ prediction }}">
+</center>
         </div>
     </div>
+    
 </body>
 </html>
