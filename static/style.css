@@ -24,11 +24,11 @@ input {
 }
 
 .card {
-	margin: 3rem auto;
+	margin: 2rem auto;
 	display: flex;
 	flex-direction: column;
 	width: 200%;
-	max-width: 850px;
+	max-width: 1000px;
 	background-color: #FFF;
 	border-radius: 10px;
 	box-shadow: 0 10px 20px 0 rgba(#999, .25);
@@ -49,7 +49,7 @@ input {
 .card-heading {
 	position: absolute;
 	left: 18%;
-	top: 12%;
+	top: 10%;
 	right: 10%;
 	font-size: 2rem;
 	font-weight: 800;
