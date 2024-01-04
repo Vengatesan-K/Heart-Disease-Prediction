@@ -68,7 +68,7 @@ input {
 	display: grid;
         grid-template-columns: repeat(2, 1fr);
         grid-column-gap: 50px;
-        grid-row-gap: 20px;
+        grid-row-gap: 30px;
 }
 
 .input {
@@ -94,7 +94,7 @@ input {
 	border-bottom: 2px solid #eee; 
 	font: inherit;
 	font-size: 1.125rem;
-	padding: 1.20rem 0;
+	padding: 0.7rem 0;
 	&:focus, &:valid {
 		outline: 0;
 		border-bottom-color: #6658d3;
