@@ -38,7 +38,7 @@ input {
 .card-image {
 	border-radius: 8px;
 	overflow: hidden;
-	padding-bottom: 20%;
+	padding-bottom: 30%;
 	background-image: url('https://raw.githubusercontent.com/Vengatesan-K/Heart-Disease-Prediction/main/Heart.png');
 	background-repeat: no-repeat;
 	background-size: 20%;
@@ -48,7 +48,7 @@ input {
 
 .card-heading {
 	position: absolute;
-	left: 20%;
+	left: 23%;
 	top: 10%;
 	right: 10%;
 	font-size: 2rem;
