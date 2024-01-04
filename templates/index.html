@@ -22,6 +22,10 @@
             flex: 0 0 48%; /* Adjust the width of left and right sides */
         }
 
+        .right-side {
+            padding-left: 20px; /* Adjust the left padding for the right side */
+        }
+
         /* Media query for responsiveness */
         @media screen and (max-width: 768px) {
             .container {
@@ -32,6 +36,7 @@
             .right-side {
                 width: 100%; /* Full width on smaller screens */
                 margin-bottom: 20px; /* Add spacing between left and right sides */
+                padding-left: 0; /* Reset padding for smaller screens */
             }
         }
     </style>
@@ -46,7 +51,6 @@
                     </h2>
                 </div>
                 <form class="card-form" action="{{ url_for('index')}}" method="POST">
-                    <!-- First six inputs/selects on the left side -->
                     <div class="input">
                         <input name="Age" type="number" step="any" class="input-field" required/>
                         <label class="input-label">Age</label>
@@ -93,7 +97,6 @@
         <div class="right-side">
             <div class="card">
                 <form class="card-form" action="{{ url_for('index')}}" method="POST">
-                    <!-- Remaining inputs/selects and the submit button on the right side -->
                     <div class="input">
                         <select name="RestingECG" class="input-field" required>
                             <option value="" disabled selected>Select RestingECG type</option>
