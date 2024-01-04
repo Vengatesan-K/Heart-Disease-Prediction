@@ -10,40 +10,36 @@
     <style>
         .container {
             display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
+            flex-wrap: wrap;
             max-width: 800px; /* Set the maximum width for the container */
             margin: 0 auto; /* Center the container horizontally */
             padding: 20px; /* Add some padding for spacing */
         }
 
-        .left-side,
-        .right-side {
-            flex: 0 0 48%; /* Adjust the width of left and right sides */
+        .input {
+            flex: 0 0 48%; /* Adjust the width of each input to occupy almost half the container */
+            margin-bottom: 15px; /* Add some space between inputs */
         }
 
-        .right-side {
-            padding-left: 20px; /* Adjust the left padding for the right side */
+        .input:last-child {
+            flex-basis: 100%; /* Make the last input (submit button) take up the entire width */
+        }
+
+        .input-field {
+            width: calc(100% - 10px); /* Adjust the width of input fields */
         }
 
         /* Media query for responsiveness */
         @media screen and (max-width: 768px) {
-            .container {
-                flex-direction: column; /* Display in a single column on smaller screens */
-            }
-
-            .left-side,
-            .right-side {
-                width: 100%; /* Full width on smaller screens */
-                margin-bottom: 20px; /* Add spacing between left and right sides */
-                padding-left: 0; /* Reset padding for smaller screens */
+            .input {
+                flex: 0 0 100%; /* On smaller screens, make each input take up full width */
             }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="left-side">
+        <div class="input">
             <div class="card">
                 <div class="card-image">    
                     <h2 class="card-heading">
@@ -51,6 +47,7 @@
                     </h2>
                 </div>
                 <form class="card-form" action="{{ url_for('index')}}" method="POST">
+                    <!-- First six inputs -->
                     <div class="input">
                         <input name="Age" type="number" step="any" class="input-field" required/>
                         <label class="input-label">Age</label>
@@ -90,56 +87,11 @@
                         </select>
                         <label class="input-label">Fasting Blood Sugar(mg/dL)</label>
                     </div>
-                </form>
-            </div>
-        </div>
-
-        <div class="right-side">
-            <div class="card">
-                <form class="card-form" action="{{ url_for('index')}}" method="POST">
+                    <!-- Submit button -->
                     <div class="input">
-                        <select name="RestingECG" class="input-field" required>
-                            <option value="" disabled selected>Select RestingECG type</option>
-                            <option value="lvh">LVH</option>
-                            <option value="normal">Normal</option>
-                            <option value="st">ST</option>
-                        </select>
-                        <label class="input-label">Resting Electrocardiographic Result</label>
-                    </div>
-                    <div class="input">
-                        <input name="MaxHR" type="number" step="any" class="input-field" required/>
-                        <label class="input-label">Maximum Heart Rate(bpm)</label>
-                    </div>
-                    <div class="input">
-                        <select name="ExerciseAngina" class="input-field" required>
-                            <option value="" disabled selected>Select ExerciseAngina type</option>
-                            <option value="no">No</option>
-                            <option value="yes">Yes</option>
-                        </select>
-                        <label class="input-label">Exercise Angina</label>
-                    </div>
-                    <div class="input">
-                        <input name="Oldpeak" type="number" step="any" class="input-field" required/>
-                        <label class="input-label">Old Peak</label>
-                    </div>
-                    <div class="input">
-                        <select name="ST_Slope" class="input-field" required>
-                            <option value="" disabled selected>Select ST_Slope type</option>
-                            <option value="down">Down</option>
-                            <option value="flat">Flat</option>
-                            <option value="up">Up</option>
-                        </select>
-                        <label class="input-label">ST Slope</label>
-                    </div>
-                    <div class="action">
                         <button type="submit" class="action-button">Submit</button>
                     </div>
                 </form>
-
-                <center>
-                    <p style="color: darkred; font-weight: bold;">{{ prediction }}</p>
-                    <img src="{{ image }}" alt="{{ prediction }}">
-                </center>
             </div>
         </div>
     </div>
