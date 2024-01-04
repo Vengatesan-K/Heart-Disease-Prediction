@@ -71,9 +71,9 @@ input {
 	display: flex;
 	flex-direction: column-reverse;
 	position: relative;
-	padding-top: 0.6rem;
+	padding-top: 1.0rem;
 	&+.input {
-		margin-top: 1.0rem;
+		margin-top: 0.5rem;
 	}
 }
 
