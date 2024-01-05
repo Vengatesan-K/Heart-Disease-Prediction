@@ -1,6 +1,9 @@
-# Heart Disease Prediction 
+# Heart Disease Prediction  
 
-> ${\textsf{\color{Darkblue}Predicting probability of heart disease in patients.}}$
+| Decsription                                  | Application/Web Link                                                                                          |
+| ------------------------------------------- | --------------------------------------------------------------------------------------------------- |
+| ${\textsf{\color{Darkblue}Predicting probability of heart disease in patients.}}$ | [![Open in Flask](https://github.com/Vengatesan-K/NewsClassifier/assets/128688827/3138b357-35e0-4640-a351-34371124a0da)](https://vengat-heart-predict.onrender.com/) |
+
 ***
 
 ![Heart](https://www.econsight.com/wp-content/uploads/2022/12/Medical-Imaging.jpg)
