@@ -1,8 +1,8 @@
 # Heart Disease Prediction  
 
-| Decsription                                  | Application/Web Link                                                                                          |
+| Description                                  | Application/Web Link                                                                                          |
 | ------------------------------------------- | --------------------------------------------------------------------------------------------------- |
-| ${\textsf{\color{Darkblue}Predicting probability of heart disease in patients.}}$ | [![Open in Flask](https://github.com/Vengatesan-K/NewsClassifier/assets/128688827/3138b357-35e0-4640-a351-34371124a0da)](https://vengat-heart-predict.onrender.com/) |
+| ${\textsf{\color{Darkblue}Using historical data with machine learning to predict the likelihood of heart disease in patients.}}$ | [![Open in Flask](https://github.com/Vengatesan-K/NewsClassifier/assets/128688827/3138b357-35e0-4640-a351-34371124a0da)](https://vengat-heart-predict.onrender.com/) |
 
 ***
 
